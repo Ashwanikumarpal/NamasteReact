@@ -5,4 +5,4 @@ export const LOGO_URL =
   "https://www.designmantic.com/logo-images/171406.png?company=Company%20Name&keyword=food%20delivery&slogan=&verify=1";
 
 export const Menu_API =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5925652&lng=77.1053673&restaurantId=";
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5900637&lng=77.08878279999999&restaurantId=";

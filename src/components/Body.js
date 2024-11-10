@@ -7,6 +7,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [listofRestaurent, setlistofRestaurent] = useState([]);
   const [searchText, setSearchText] = useState([]);
+  console.log(listofRestaurent);
 
   useEffect(() => {
     fetchData();
@@ -14,7 +15,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5925652&lng=77.1053673&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5900637&lng=77.08878279999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();

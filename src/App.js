@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,13 +7,29 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import usercontext from "./utils/usercontext";
+import { useContext } from "react";
 
 const Layout = () => {
+  const [userName, setUserName] = useState();
+  //Authentication
+
+  useEffect(() => {
+    const data = {
+      name: "Ashwani Pal",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <usercontext.Provider value={{ loggedInUser: userName }}>
+      <div className="app">
+        <usercontext.Provider value={{ loggedInUser: "vivek" }}>
+          <Header />
+        </usercontext.Provider>
+        <Outlet />
+      </div>
+    </usercontext.Provider>
   );
 };
 
