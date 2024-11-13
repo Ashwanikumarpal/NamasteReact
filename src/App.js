@@ -8,7 +8,8 @@ import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import usercontext from "./utils/usercontext";
-import { useContext } from "react";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Layout = () => {
   const [userName, setUserName] = useState();
@@ -22,14 +23,16 @@ const Layout = () => {
   }, []);
 
   return (
-    <usercontext.Provider value={{ loggedInUser: userName }}>
-      <div className="app">
-        <usercontext.Provider value={{ loggedInUser: "vivek" }}>
-          <Header />
-        </usercontext.Provider>
-        <Outlet />
-      </div>
-    </usercontext.Provider>
+    <Provider store={appStore}>
+      <usercontext.Provider value={{ loggedInUser: userName }}>
+        <div className="app">
+          <usercontext.Provider value={{ loggedInUser: "vivek" }}>
+            <Header />
+          </usercontext.Provider>
+          <Outlet />
+        </div>
+      </usercontext.Provider>
+    </Provider>
   );
 };
 

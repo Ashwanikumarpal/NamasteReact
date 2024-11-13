@@ -5,7 +5,7 @@ import usercontext from "../utils/usercontext";
 const About = () => {
   return (
     <div>
-      <h1>This is About Page</h1>
+      <h1>This is About Page </h1>
       <div>
         user Logged in:
         <usercontext.Consumer>
