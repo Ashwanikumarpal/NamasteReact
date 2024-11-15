@@ -14,7 +14,7 @@ const RestaurentMenu = () => {
 
   const [showindex, setShowIndex] = useState(null);
 
-  console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards);
+  //console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -30,7 +30,7 @@ const RestaurentMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  console.log(categories);
+  //console.log(categories);
   return (
     <div className="text-center">
       <h1 className="font-bold">{name}</h1>
